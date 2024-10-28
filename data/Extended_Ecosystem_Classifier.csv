@@ -1,0 +1,22 @@
+Ecosystem,Surface Temperature (°C),Albedo Value,Chlorophyll Content,Precipitation (mm/year),Humidity (%),Nocturnal Illumination,RGB Value,Altitude (m),Latitude (°),Temperature Variation (°C)
+Artificial-Urban-Greenspace,10-30,0.2-0.4,>0.4,500-1000,60-80,>0.6,Greenish,<500,30-60,Low
+Artificial-Urban-Buildings,10-35,0.2-0.3,<0.2,NA,50-70,>0.8,Grayish,<500,30-60,Moderate
+Artificial-Agriculture-Plantation,15-30,0.15-0.3,0.3-0.6,800-1500,60-80,<0.2,Green,<1000,0-60,Moderate
+Artificial-Agriculture-Fields,15-30,0.15-0.3,0.3-0.6,500-1500,50-80,<0.2,Yellow-Green,<1000,0-60,Moderate
+Artificial-Infrastructure-Roads,NA,0.3-0.5,NA,NA,NA,NA,Gray,NA,NA,NA
+Artificial-Infrastructure-Rails,NA,0.3-0.5,NA,NA,NA,NA,Gray,NA,NA,NA
+Natural-Forest-Boreal/Taiga,-10 to 10,>0.5 (Snow),0.3-0.5,400-600,60-80,<0.1,Dark Green,0-1000,50-70,High
+Natural-Forest-Temperate,0 to 20,0.2-0.5,0.4-0.6,600-1200,50-70,<0.1,Mixed Green/Brown,0-1000,30-50,Moderate
+Natural-Forest-Tropical Moist Forest,20 to 30,0.15-0.25,>0.6,>2000,70-90,<0.1,Deep Green,0-500,0-10,Low
+Natural-Forest-Tropical Wet Forest,25 to 35,0.1-0.2,>0.6,>2500,80-100,<0.1,Vibrant Green,0-500,0-10,Low
+Natural-Grassland-Meadow,5 to 25,0.2-0.4,0.4-0.5,500-1200,60-80,<0.1,Green,0-1000,30-60,Moderate
+Natural-Grassland-Steppe,0 to 15,0.3-0.5,0.2-0.4,200-500,30-50,<0.1,Yellowish,0-1500,30-60,High
+Natural-Grassland-Savanna,20 to 35,0.15-0.3,0.3-0.5,500-1000,40-60,<0.2,Yellow-Green,0-1000,0-30,Moderate
+Natural-Grassland-Swamp,15 to 30,0.1-0.3,0.4-0.6,>1500,70-90,<0.1,Greenish-Brown,0-500,0-30,Low
+Natural-Desert-Hot,>30,0.2-0.3,<0.2,<250,<30,<0.1,Light Brown,<500,0-30,High
+Natural-Desert-Cold,<0,>0.4,<0.2,<200,<30,<0.1,Grayish-White,<1000,40-60,High
+Natural-Desert-Semi-arid,10-30,0.2-0.4,0.2-0.3,250-500,30-50,<0.2,Light Brown,0-1000,20-40,High
+Natural-Desert-Coastal,10-25,0.3-0.5,<0.2,200-600,40-60,<0.1,Sandy,<500,0-30,Moderate
+Natural-Montane-Montane Forests,-5 to 15,0.2-0.4,0.3-0.5,800-1500,50-70,<0.1,Mixed Green/Gray,>1000,30-60,High
+Natural-Montane-Alpine Tundra,<0,>0.4,0.2-0.3,300-500,30-50,<0.1,Gray-White,>2000,60-80,Extreme
+Natural-Montane-Subalpine Zone,-5 to 10,0.3-0.5,0.2-0.4,400-700,40-60,<0.1,Gray-Green,1500-2500,40-60,High
