@@ -7,7 +7,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-from mpl_toolkits.basemap import Basemap
 from sqlalchemy import create_engine, text, inspect
 from dotenv import dotenv_values
 from meteostat import Stations, Monthly
@@ -25,7 +24,7 @@ def prompt_user():
             print("Invalid input. Please enter 'y' or 'n'.")
 
 ##DEBUGGING
-print("Do you want to run the script in debug mode? (Skips db connection and sets all other user inputs states to 'def')")
+print("\nDo you want to run the script in debug mode? (Skips db connection and sets all other user inputs states to 'def')")
 debug_state = prompt_user()
             
 # >>> Adjust sourcing timestamps to only allow for full years
@@ -175,7 +174,7 @@ def get_custom_dates():
             print("Invalid input. Please enter daterange or 'def'.")
 
 if debug_state:
-    start = pd.to_datetime("01-01-"+str(datetime.today().year-5), dayfirst = True)
+    start = pd.to_datetime("01-01-"+str(datetime.today().year-6), dayfirst = True)
     end = pd.to_datetime("31-12-"+str(datetime.today().year-5), dayfirst = True) 
 else: 
     start, end = get_custom_dates()
@@ -229,67 +228,61 @@ df_meta = pd.DataFrame()
 
 # Assume start and end are defined elsewhere or add them as arguments
 for i, row in df_stations.iterrows():
-    #loop housekeeping
-    # Calculate and print progress percentage
+    # Calculate progress percentage
     percent_complete = (i + 1) / total_rows
     filled_length = int(bar_length * percent_complete)
     bar = '█' * filled_length + '-' * (bar_length - filled_length)
-    # Variable definition
-    Error = '                                                               ' #resetting error
+
+    # Initialize/reset error message
+    Error = ""
+
+    # Extract station information
     station_id = row["id"]
     name = row["name"]
     country = row["country"]
+
     # Get station parameters
     start_i = row["monthly_start"]
     end_i = row["monthly_end"]
-        
+
     # Adjust the dates to only take full years into account
-    start_i_adj, end_i_adj = adjust_dates_for_full_years(start_i, end_i)     
-    
-    # Display the progress bar and current station info
-    print(f"Progress: |{bar}| {percent_complete * 100:.2f}% \t Checking dates for: {station_id} | {name[:10]}... \t | {country} | {Error}",  end="\r")
-        
+    start_i_adj, end_i_adj = adjust_dates_for_full_years(start_i, end_i)
+
     # Validate the adjusted dates
     if start_i_adj is None or end_i_adj is None:
-        Error = f'Error1: No date range detected for {station_id}. Skipping...'
-        print(f"Progress: |{bar}| {percent_complete * 100:.2f}% \t Checking dates for: {station_id} | {name[:10]}... \t | {country} | {Error}",  end="\r")
-        continue
+        Error = f"Error1: No date range detected for {station_id}. Skipping..."
+    elif start_i_adj > end_i_adj:
+        Error = f"Error2: Invalid date range for station {station_id}. Skipping..."
+    else:
+        # Check and adjust start and end times based on provided bounds
+        if start >= start_i_adj:
+            start_i_adj = start
+        if end <= end_i_adj:
+            end_i_adj = end
 
-    # Check and adjust start and end times based on provided bounds
-    # if start is after initiation of use start as parameter
-    if start >= start_i_adj:
-        start_i_adj = start
-    # if end is before end  of recording use end
-    if end <= end_i_adj:
-        end_i_adj = end 
-    #else proceed with df_stations values 
+        # If dates are valid, create a DataFrame for the station metadata
+        df_i = pd.DataFrame({
+            "id": [station_id],
+            "name": [name],
+            "country": [country],
+            "start": [start_i_adj],
+            "end": [end_i_adj]
+        })
+        # Concatenate the station metadata to the main DataFrame
+        df_meta = pd.concat([df_meta, df_i], ignore_index=True)
 
-    #sanity check whether 'start' is before 'end'
-    if start_i_adj > end_i_adj:
-        Error = f'Error2: Invalid date range for station {station_id}. Skipping...'
-        print(f"Progress: |{bar}| {percent_complete * 100:.2f}% \t Checking dates for: {station_id} | {name[:10]}... \t | {country} | {Error}",  end="\r")
-        continue
+    # Display the progress bar and current station info
+    print(f"Progress: |{bar}| {percent_complete * 100:.2f}% \t Checking dates for: {station_id} | {name[:10]}... \t | {country} | {Error}", end="\r")
 
-    # Create a DataFrame for the station metadata
-    df_i = pd.DataFrame({
-        "id": [station_id],
-        "name": [name],
-        "country": [country],
-        "start": [start_i_adj],
-        "end": [end_i_adj]
-    })
-    
-    # Concatenate the station metadata to the main DataFrame
-    df_meta = pd.concat([df_meta, df_i], ignore_index=True)
-    # only run the first 20 iterations for debugging
-    if debug_state and i <20:
+    # Only run the first 20 iterations for debugging
+    if debug_state and i > 20:
         break
         
 print("")
 print(f"\nIn total: {df_meta.shape[0]} stations are within range ({start.strftime("%d-%m-%Y")} to {end.strftime("%d-%m-%Y")})")
 
 #Fetching data
-print("\n--- FETCHING DATA: --- ")
+print("\n--- FETCHING DATA: ---\n")
 
 df_agg = pd.DataFrame()
 total_rows = len(df_meta)
@@ -309,8 +302,8 @@ for i, row in df_meta.iterrows():
     
     #fetch data for respective station with the previously defined start and end date
     df_i = Monthly(row["id"], #station 
-                start = row["start"], #start
-                end= row["end"] #end
+                start = pd.to_datetime(row["start"]), #start
+                end= pd.to_datetime(row["end"]) #end
                 )
     df_i = df_i.fetch().reset_index()
     #aggregate the data for each year
@@ -328,11 +321,27 @@ for i, row in df_meta.iterrows():
     # Concatenate the station metadata to the main DataFrame
     df_agg = pd.concat([df_agg, df_yearly], ignore_index=True)
     
-    if debug_state:
+    if debug_state and i>20:
         break
 
 print("")
-print(df_agg)
+
+potential_stations = df_meta.shape[0]*(end.year-start.year+1)
+extracted_stations = df_agg.shape[0]
+
+print(f"\nFetch and aggregation successful for: {extracted_stations} data points ({round(100*extracted_stations/potential_stations,2)}% of {df_meta.shape[0]} stations over {(end.year-start.year+1)} years)") 
+#Fetching data
+print("\n--- UPLOADING TO DATABASE: ---\n")
+
+for time in df_agg["time"].unique():
+    df_sub = df_agg[df_agg["time"] == time]
+    name = f'meteostat_{time}'
+    print(f"pushing '{name}' to sql")
+    if not debug_state and custom_filter == {}:
+        df_sub.to_sql(name, engine, if_exists='replace', index=False)
+    if not debug_state and custom_filter != {}:
+        df_sub.to_sql(f'{name}_filtered', engine, if_exists='replace', index=False)
+
 
 ## PRINT END OF SCRIPT STATEMENT
 print("\n--- END ---")
