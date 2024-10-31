@@ -1,37 +1,27 @@
-# Protocol #2 
+# Protocol #2
 
-## Daily log
+## Daily Log
 
-### Daily goal set
-#### Alexander 
-
-* Potential database sources research
+### Daily Goal Set
+#### Alexander
+- Potential database sources research ([Earthdata](https://www.earthdata.nasa.gov/))
 
 #### Noah
+- Potential database sources research ([Meteostat](https://meteostat.net/en/))
 
-* Potential database sources research
+---
 
+### Result
+- Meteostat GitHub data records suitable
+- Missing weather station data gets replaced by nearby weather station data
 
+---
 
-### Result: 
+#### Soma
+- Potential webpage design and operation
 
-* Meteostat Github data records suitable
-* Missing weatherstation data gets replaced by nearby weatherstation data 
-
-
-#### Soma 
-* Potential Webpage design and operation
+---
 
 #### Heiko
-* Prepare presentation for upcoming stakeholder "Check-In"
-* Timeline notation 
-
-
-
-
-
-
-
-
-
-
+- Prepare presentation for upcoming stakeholder "Check-In"
+- Timeline notation

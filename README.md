@@ -29,9 +29,36 @@ This project is designed and pursued in the context of the *Data Analytics Consu
 **Tools:** For team communications this [miro board](https://miro.com/app/board/uXjVLRd7MDI=/?share_link_id=695364651737) is used
 
 **Data sources**
-|Name|Content|Data URL|
-|---|---|---|
-|[IUC red list](https://www.iucnredlist.org/)|List of endangered species||
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+    <th>Data URL</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td rowspan="2"><a href="https://www.earthdata.nasa.gov/">EarthData</a></td>
+    <td rowspan="2">Library of accumulated satellite data</td>
+    <td><a href="https://disc.gsfc.nasa.gov/datasets/GLDAS_NOAH025_M_2.1/summary">GLDAS Noah Land Surface Model L4 monthly 0.25 x 0.25 degree V2.1 (GLDAS_NOAH025_M)</a></td>
+    <td>From 2000-2024</td>
+  </tr>
+  <tr>
+    <td><a href="https://disc.gsfc.nasa.gov/datasets/GLDAS_NOAH025_M_2.0/summary">GLDAS Noah Land Surface Model L4 monthly 0.25 x 0.25 degree V2.0 (GLDAS_NOAH025_M)</a></td>
+    <td>From 1948-2014</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.meteostat.net/">Meteostat</a></td>
+    <td>Library of global weatherstations</td>
+    <td>Data is sourced through the pyhton library <code>meteostat</code> <a href=https://meteostat.net/en/blog/analyze-historical-weather-data-python>(documentation)</a></td>
+    <td>Representation bias towards EU and NA</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.iucnredlist.org/">IUC Red List</a></td>
+    <td>List of endangered species</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
 ---
 
