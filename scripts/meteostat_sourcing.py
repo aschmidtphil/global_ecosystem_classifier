@@ -336,11 +336,12 @@ print("\n--- UPLOADING TO DATABASE: ---\n")
 for time in df_agg["time"].unique():
     df_sub = df_agg[df_agg["time"] == time]
     name = f'meteostat_{time}'
-    print(f"pushing '{name}' to sql")
     if not debug_state and custom_filter == {}:
         df_sub.to_sql(name, engine, if_exists='replace', index=False)
+        print(f"pushing '{name}' to sql")
     if not debug_state and custom_filter != {}:
         df_sub.to_sql(f'{name}_filtered', engine, if_exists='replace', index=False)
+        print(f"pushing '{name}_filtered' to sql")
 
 
 ## PRINT END OF SCRIPT STATEMENT
