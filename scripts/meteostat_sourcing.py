@@ -108,7 +108,7 @@ if not debug_state:
 
     if schemas != []:
         print(f"succesfully connected to: \t {pg_db}")
-        print(f"available schemas: \t\t {", ".join(schemas)}")
+        print(f"available schemas: \t\t {', '.join(schemas)}")
     else:
         print(f'connection to database failed: aborting')
 
@@ -279,7 +279,7 @@ for i, row in df_stations.iterrows():
         break
         
 print("")
-print(f"\nIn total: {df_meta.shape[0]} stations are within range ({start.strftime("%d-%m-%Y")} to {end.strftime("%d-%m-%Y")})")
+print(f"\nIn total: {df_meta.shape[0]} stations are within range ({start.strftime('%d-%m-%Y')} to {end.strftime('%d-%m-%Y')})")
 
 #Fetching data
 print("\n--- FETCHING DATA: ---\n")

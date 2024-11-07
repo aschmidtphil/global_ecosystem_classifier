@@ -125,3 +125,5 @@ uvicorn script_name:app --reload
 |[Black Mable Documentation](https://ladsweb.modaps.eosdis.nasa.gov/api/v2/content/archives/Document%20Archive/Science%20Data%20Product%20Documentation/VIIRS_Black_Marble_UG_v1.3_Sep_2022.pdf)|User guide for interpreation of night illumination data|
 |[VIIRS DNB Download](https://forum.earthdata.nasa.gov/viewtopic.php?t=527)| Forum entry on how to download and access `.hdf` and `.h5` files used by VIIRS|
 |[Change in Night Lights between 2013 and 2023](https://svs.gsfc.nasa.gov/5276/)|Exemplary visualisualisation of the night illumination data set|
+|[Earthaccess Github](https://github.com/nsidc/earthaccess)|Repository including source codes and demo `.ipynb`s|
+|[Earthaccess cookbook Github](https://github.com/NASA-Openscapes/earthdata-cloud-cookbook)|Repository including `.ipynb`s of exemplary but local analyses|
