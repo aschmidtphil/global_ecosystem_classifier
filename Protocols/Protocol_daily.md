@@ -211,3 +211,43 @@
 - Idependently calculate ecosystem definition @NoahKuertoes
 - Update [README](/README.md) sections `Literature research`, `Data acquisition`, `Web integration` for the status quo @HeikoFrae
 - Upload and improve stakeholder presentations @HeikoFrae
+  
+---
+---
+---
+# Protocol #5
+
+**Date: Wednesday, 06.11.2024**
+
+#### Stakeholder presentation no.2
+
+Discussion on possible future targets for next presentation. Potential interests to focus on will be "Great Green Wall" in Africa to see different states of vegetation and changes in the weather data through the years to show future solutions on conserving nature projects. Next goal to present is the classification of ecosystems and map based statements for that.
+
+Site note: Dropped the idea to implement the extinction rate of species   
+
+#### Database scripts
+
+Working on a script for maximum and minimum latitude of landscapes.
+Plotting data for Africa in 2020 and 2015.
+
+#### Webpage improvements
+
+Working on webpage scattering in region limitation for weather station locations.   
+
+#### Map based plotting
+Working on visualisation and implementing nighttime lights and illumination to determine urban areas.
+
+---
+---
+---
+# Protocol #6
+
+**Date: Thursday, 07.11.2024** 
+
+#### Merge Meteostat into SQL
+
+Uploading and merge meteostat Data via python scripts on SQL. Debugging Python scripts and updated permissions.
+
+
+
+
