@@ -108,7 +108,7 @@ if not debug_state:
 
     if schemas != []:
         print(f"succesfully connected to: \t {pg_db}")
-        print(f"available schemas: \t\t {", ".join(schemas)}")
+        print(f"available schemas: \t\t {', '.join(schemas)}")
     else:
         print(f'connection to database failed: aborting')
 
@@ -279,7 +279,7 @@ for i, row in df_stations.iterrows():
         break
         
 print("")
-print(f"\nIn total: {df_meta.shape[0]} stations are within range ({start.strftime("%d-%m-%Y")} to {end.strftime("%d-%m-%Y")})")
+print(f"\nIn total: {df_meta.shape[0]} stations are within range ({start.strftime('%d-%m-%Y')} to {end.strftime('%d-%m-%Y')})")
 
 #Fetching data
 print("\n--- FETCHING DATA: ---\n")
@@ -336,11 +336,12 @@ print("\n--- UPLOADING TO DATABASE: ---\n")
 for time in df_agg["time"].unique():
     df_sub = df_agg[df_agg["time"] == time]
     name = f'meteostat_{time}'
-    print(f"pushing '{name}' to sql")
     if not debug_state and custom_filter == {}:
         df_sub.to_sql(name, engine, if_exists='replace', index=False)
+        print(f"pushing '{name}' to sql")
     if not debug_state and custom_filter != {}:
         df_sub.to_sql(f'{name}_filtered', engine, if_exists='replace', index=False)
+        print(f"pushing '{name}_filtered' to sql")
 
 
 ## PRINT END OF SCRIPT STATEMENT
