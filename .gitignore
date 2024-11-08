@@ -166,4 +166,4 @@ cython_debug/
 .env
 
 # data folder
-data/
+#data/
