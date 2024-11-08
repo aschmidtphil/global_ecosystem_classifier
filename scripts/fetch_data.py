@@ -4,7 +4,7 @@ import pandas as pd
 from dotenv import dotenv_values
 from sqlalchemy import create_engine, text, inspect
 
-def fetch_data_from_postgres(variables = "source"):
+def fetch_data_from_postgres(variables = "source", silent = True):
     
     '''
     This function fetches a grid of coordinates of a certain year provided in 
@@ -13,9 +13,9 @@ def fetch_data_from_postgres(variables = "source"):
     as dictionary. Variables must include [lat_min, lat_max, lon_min, lon_max, years]
     '''
     
-    print("\n--- DB SIGN IN: ---")
+    if not silent: print("\n--- DB SIGN IN: ---")
     # Load configuration from .env file
-    print("reading .env files...")
+    if not silent: print("reading .env files...")
     config = dotenv_values()
     pg_user = config.get('POSTGRES_USER')
     pg_host = config.get('POSTGRES_HOST')
@@ -32,28 +32,28 @@ def fetch_data_from_postgres(variables = "source"):
     # Validate connection and list schemas
     schemas = inspector.get_schema_names()
     if schemas:
-        print(f"successfully connected to:\t {pg_db}")
-        print(f"available schemas:\t\t {', '.join(schemas)}")
+        if not silent: print(f"successfully connected to:\t {pg_db}")
+        if not silent: print(f"available schemas:\t\t {', '.join(schemas)}")
     else:
-        print('connection to database failed: aborting')
+        if not silent: print('connection to database failed: aborting')
         return
     
     # Set default schema
-    print(f'setting default schema to:\t {pg_schema}')
+    if not silent: print(f'setting default schema to:\t {pg_schema}')
     with engine.begin() as conn:
         conn.execute(text(f'SET search_path TO {pg_schema};'))
     
     tables = inspector.get_table_names(schema=pg_schema)
-    print(f'tables in default schema:\t {", ".join(tables)}')
+    if not silent: print(f'tables in default schema:\t {", ".join(tables)}')
 
     # Load fetch parameter
     if variables == "source":
-        print("\n--- READING FETCHING PARAMETERS: ---")
+        if not silent: print("\n--- READING FETCHING PARAMETERS: ---")
         with open("../data/fetch_param.json", "r") as json_file:
             variables = json.load(json_file)
 
     for key, value in variables.items():
-        print(f'{key}:\t {value}')
+        if not silent: print(f'{key}:\t {value}')
     
     # Filter tables based on year and parameters
     fetched_tables = ["elevation"]
@@ -63,10 +63,10 @@ def fetch_data_from_postgres(variables = "source"):
         if year.isdigit() and int(year) in variables["years"]:
             fetched_tables.append(t)
     
-    print(f'>>> Fitting tables: {", ".join(fetched_tables)}')
+    if not silent: print(f'>>> Fitting tables: {", ".join(fetched_tables)}')
 
     # Check columns for lat/lon requirements
-    print("\n--- CHECKING TABLES: ---")
+    if not silent: print("\n--- CHECKING TABLES: ---")
     table_columns = {}
     for t in fetched_tables:
         columns = inspector.get_columns(t, schema=pg_schema)
@@ -74,13 +74,13 @@ def fetch_data_from_postgres(variables = "source"):
 
     for table, columns in table_columns.items():
         if not any(col in columns for col in ["lon", "longitude"]) or not any(col in columns for col in ["lat", "latitude"]):
-            print(f"DISCARDED:\t{table} >>> does not feature 'lon/longitude' and 'lat/latitude' as columns")
+            if not silent: print(f"DISCARDED:\t{table} >>> does not feature 'lon/longitude' and 'lat/latitude' as columns")
             fetched_tables.remove(table)
         else:
-            print(f"KEPT:\t\t{table}")
+            if not silent: print(f"KEPT:\t\t{table}")
 
     # Fetch data for selected tables
-    print("\n--- FETCHING DATA: ---")
+    if not silent: print("\n--- FETCHING DATA: ---")
     json_outputs = {}
     for ft in fetched_tables:
         columns = inspector.get_columns(ft, schema=pg_schema)
@@ -91,7 +91,7 @@ def fetch_data_from_postgres(variables = "source"):
         elif "latitude" in column_names and "longitude" in column_names:
             query = text(f"SELECT * FROM {pg_schema}.{ft} WHERE latitude BETWEEN :lat_min AND :lat_max AND longitude BETWEEN :lon_min AND :lon_max;")
         else:
-            print(f'{ft} does not have required lat/lon or latitude/longitude columns')
+            if not silent: print(f'{ft} does not have required lat/lon or latitude/longitude columns')
             continue
         
         df = pd.read_sql(query, con=engine, params={
@@ -101,6 +101,6 @@ def fetch_data_from_postgres(variables = "source"):
             'lon_max': variables['lon_max']
         })
         json_outputs[ft] = df.to_json(orient='records')
-        print(f'>>> SUCCESS: {ft} data fetched')
-
+        if not silent: print(f'>>> SUCCESS: {ft} data fetched')
+        
     return json_outputs
