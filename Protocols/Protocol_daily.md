@@ -249,5 +249,15 @@ Working on visualisation and implementing nighttime lights and illumination to d
 Uploading and merge meteostat Data via python scripts on SQL. Debugging Python scripts and updated permissions.
 
 
+# Protocol #7
+
+**Date: Friday, 08.11.2024**
+
+#### Fetching Trainingdata for visualization classifier
+
+Working on parameters to classify different ecosystem by using extreme ecosystems example for machine learning.
+
+
+
 
 
