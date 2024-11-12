@@ -9,20 +9,20 @@
             "years": [2020]
         }
     },
-    "New York": {
+    "New York": { 
         "ecosystem": "Artificial-Urban-Buildings",
         "variables": {
-            "lat_min": 40.697149,
-            "lat_max": 40.773944,
-            "lon_min": -74.017103,
-            "lon_max": -73.935242,
+            "lat_min": 40.5,
+            "lat_max": 41.0,
+            "lon_min": -74.25,
+            "lon_max": -73.70,
             "years": [2020]
         }
     },
     "Moscow": {
         "ecosystem": "Artificial-Urban-Buildings",
         "variables": {
-            "lat_min": 55.55,
+            "lat_min": 55.7,
             "lat_max": 55.85,
             "lon_min": 37.3,
             "lon_max": 37.75,
@@ -49,33 +49,23 @@
             "years": [2020]
         }
     },
-    "Hyde Park (London)": {
-        "ecosystem": "Artificial-Urban-Greenspace",
+    "Niedersachsen Agricultural Region (Germany)": {
+        "ecosystem": "Artificial-Agriculture-Fields",
         "variables": {
-            "lat_min": 51.5020,
-            "lat_max": 51.5300,
-            "lon_min": -0.1765,
-            "lon_max": -0.1570,
+            "lat_min": 52.3,
+            "lat_max": 53.3,
+            "lon_min": 8.5,
+            "lon_max": 9.7,
             "years": [2020]
         }
     },
-    "Niedersachsen (Germany)": {
+    "Shandong Agricultural Region (China)": {
         "ecosystem": "Artificial-Agriculture-Fields",
         "variables": {
-            "lat_min": 52.0,
-            "lat_max": 53.5,
-            "lon_min": 8.0,
-            "lon_max": 10.0,
-            "years": [2020]
-        }
-    },
-    "Shandong Province (China)": {
-        "ecosystem": "Artificial-Agriculture-Fields",
-        "variables": {
-            "lat_min": 35.0,
-            "lat_max": 37.0,
-            "lon_min": 117.0,
-            "lon_max": 119.0,
+            "lat_min": 35.5,
+            "lat_max": 36.5,
+            "lon_min": 116.5,
+            "lon_max": 118.5,
             "years": [2020]
         }
     },
@@ -199,7 +189,7 @@
             "years": [2020]
         }
     },
-    "Pampas (Argentina)": {
+    "Pampas_Steppe (Argentina)": {
         "ecosystem": "Natural-Grassland-Steppe",
         "variables": {
             "lat_min": -35.0,
@@ -302,10 +292,10 @@
     "Patagonian Desert (Argentina, Chile)": {
         "ecosystem": "Natural-Desert-Cold",
         "variables": {
-            "lat_min": -38.0,
-            "lat_max": -41.0,
-            "lon_min": -68.5,
-            "lon_max": -65.0,
+            "lat_min": -43.5,
+            "lat_max": -39.0,
+            "lon_min": -70.0,
+            "lon_max": -64.0,
             "years": [2020]
         }
     },
@@ -446,26 +436,6 @@
             "lat_max": 47.0,
             "lon_min": 6.0,
             "lon_max": 7.0,
-            "years": [2020]
-        }
-    },
-    "Everest Base Camp (Nepal)": {
-        "ecosystem": "Natural-Montane-Alpine_tundra",
-        "variables": {
-            "lat_min": 27.9,
-            "lat_max": 28.0,
-            "lon_min": 86.9,
-            "lon_max": 87.0,
-            "years": [2020]
-        }
-    },
-    "Mount Elbrus (Russia)": {
-        "ecosystem": "Natural-Montane-Alpine_tundra",
-        "variables": {
-            "lat_min": 43.3,
-            "lat_max": 43.4,
-            "lon_min": 42.5,
-            "lon_max": 42.6,
             "years": [2020]
         }
     },
@@ -638,5 +608,125 @@
             "lon_max": 87.5,
             "years": [2020]
         }
-    }
-}
+    },
+    "Antarctica": {
+        "ecosystem": "Natural-Desert-Cold",
+        "variables": {
+            "lat_min": -90.0,
+            "lat_max": -60.0,
+            "lon_min": -180.0,
+            "lon_max": 180.0,
+            "years": [2020]
+        }
+    },
+    "Undis Mountains (Pakistan)": {
+        "ecosystem": "Natural-Montane-Montane_Forest",
+        "variables": {
+            "lat_min": 34.5,
+            "lat_max": 35.5,
+            "lon_min": 71.0,
+            "lon_max": 73.0,
+            "years": [2020]
+        }
+    },
+    "Amazonas (Brazil)": {
+        "ecosystem": "Natural-Forest-Tropical",
+        "variables": {
+            "lat_min": -5.5,
+            "lat_max": -1.0,
+            "lon_min": -64.5,
+            "lon_max": -59.5,
+            "years": [2020]
+        }
+    },
+    "Urban Area (India)": {
+        "ecosystem": "Artificial-Urban-Buildings",
+        "variables": {
+            "lat_min": 28.5,
+            "lat_max": 28.8,
+            "lon_min": 77.0,
+            "lon_max": 77.3,
+            "years": [2020]
+        }
+    },
+    "Japan (Natural Forest)": {
+        "ecosystem": "Natural-Forest-Temperate",
+        "variables": {
+            "lat_min": 35.0,
+            "lat_max": 37.0,
+            "lon_min": 138.0,
+            "lon_max": 140.0,
+            "years": [2020]
+        }
+    },
+    "Arabian Desert (Arabia)": {
+        "ecosystem": "Natural-Desert-Hot",
+        "variables": {
+            "lat_min": 20.0,
+            "lat_max": 25.0,
+            "lon_min": 45.0,
+            "lon_max": 55.0,
+            "years": [2020]
+        }
+    },
+    "Kongo Rainforest (DR Congo)": {
+        "ecosystem": "Natural-Forest-Tropical",
+        "variables": {
+            "lat_min": -3.0,
+            "lat_max": 1.0,
+            "lon_min": 15.0,
+            "lon_max": 20.0,
+            "years": [2020]
+        }
+    },
+    "Equatorial Africa (Gabon's Forest)": {
+        "ecosystem": "Natural-Forest-Tropical",
+        "variables": {
+            "lat_min": -2.0,
+            "lat_max": 2.0,
+            "lon_min": 9.0,
+            "lon_max": 12.0,
+            "years": [2020]
+        }
+    },
+    "Central Spain (Meadow)": {
+        "ecosystem": "Natural-Grassland-Meadow",
+        "variables": {
+            "lat_min": 40.0,
+            "lat_max": 41.0,
+            "lon_min": -3.0,
+            "lon_max": -2.0,
+            "years": [2020]
+        }
+    },
+    "Equatorial Pacific (Galápagos Islands)": {
+        "ecosystem": "Natural-Desert-Semi_arid",
+        "variables": {
+            "lat_min": -1.5,
+            "lat_max": 0.5,
+            "lon_min": -91.0,
+            "lon_max": -89.0,
+            "years": [2020]
+        }
+    },
+        "Greenland (Southwest)": {
+            "ecosystem": "Natural-Forest-Boreal/Taiga",
+            "variables": {
+                "lat_min": 60.0,
+                "lat_max": 61.5,
+                "lon_min": -49.0,
+                "lon_max": -45.0,
+                "years": [2020]
+            }
+        },
+        "Greenland (Northeast)": {
+            "ecosystem": "Natural-Montane-Alpine_tundra",
+            "variables": {
+                "lat_min": 75.0,
+                "lat_max": 77.0,
+                "lon_min": -16.5,
+                "lon_max": -13.5,
+                "years": [2020]
+            }
+        }
+} 
