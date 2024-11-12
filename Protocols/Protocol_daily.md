@@ -248,6 +248,9 @@ Working on visualisation and implementing nighttime lights and illumination to d
 
 Uploading and merge meteostat Data via python scripts on SQL. Debugging Python scripts and updated permissions.
 
+---
+---
+---
 
 # Protocol #7
 
@@ -257,7 +260,80 @@ Uploading and merge meteostat Data via python scripts on SQL. Debugging Python s
 
 Working on parameters to classify different ecosystem by using extreme ecosystems example for machine learning.
 
+---
+---
+---
 
+# Protocol #8
+
+**Date: Monday, 11.11.2024
+
+#### Webpage 
+
+Working on integration of python syntax and module into the website.
+
+#### Ecosystem Data 
+
+Gathered more coordinates and ecosystems to the ecosystem_locations.json to expand the training data for machine learning module. 
+
+Created a machine learning code to test ecosystem prediction and test with visualization. 
+Uploaded the list into SQL as _11112024_trainingdata_.
+
+>(Please find the progress in the stack messenger)
+
+```
+
+df = pd.read_csv("20241111_trainingdata.csv")  #this table is on our PostgreSQL Database. it was created with the fetch_training_data.py
+df = df.dropna()
+
+X = df.drop(columns=["ecosystem", "name"])
+label_encoder = LabelEncoder()
+y = label_encoder.fit_transform(df["ecosystem"])
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+print("Modellbewertung:\n", classification_report(y_test, y_pred))
+
+merged_data_to_predict = pd.read_csv('20241111_data_to_predict.csv')   #This table is also on our PostgreSQL Database. It was created with the fetch_training_data.py and a json with only one #location for the whole globe from -90 to 90 lat and -180 to 180 lon
+
+X_new = merged_data_to_predict.drop(columns=["ecosystem", "name"], errors='ignore')
+
+X_new_scaled = scaler.transform(X_new)
+
+y_new_pred = model.predict(X_new_scaled)
+
+ecosystem_pred = label_encoder.inverse_transform(y_new_pred)
+
+merged_data_to_predict['predicted_ecosystem'] = ecosystem_pred
+
+print(merged_data_to_predict[['lat', 'lon', 'predicted_ecosystem']].head())
+
+``` 
+
+
+
+
+#### There were more than 14 ecosystem classification after running it in chatgpt, pushed it back to 14 ecosystem but now dots occure in ocean regions.
+
+#### Next step: Check the lon/lat coordinates to verify if dots may be small rain-forrest/jungle islands and probably figure out how to drop them out of map.
+
+
+  
+
+
+
+
+
+
+   
 
 
 
