@@ -35,13 +35,22 @@ def merge_geo_json(json_outputs, silent=True):
 
     # Merge all DataFrames on 'lat' and 'lon' if there are valid DataFrames
     if dfs:
+        #define the merged df as first dataframe
         merged_df = dfs[0]
-        for df in dfs[1:]:
-            try:
-                merged_df = merged_df.merge(df, on=['lat', 'lon'], how='outer')
-            except KeyError as e:
-                if not silent: print(f"Error merging table due to missing 'lat'/'lon' columns: {e}")
-                continue  # Skip merging if 'lat'/'lon' columns are missing
+        
+    for i, df in enumerate(dfs[1:], start=1):
+        try:
+            rows1 = df.shape[0]
+            df.drop_duplicates(subset=['lat', 'lon'], keep='first', inplace=True)
+            rows2 = df.shape[0]
+            if rows1 != rows2: 
+                key = list(json_outputs.keys())[i]  # Ensure correct key access
+                print(f'\t\t>>>duplicate rows in {key}: dropped {rows1 - rows2} rows')
+            merged_df = merged_df.merge(df, on=['lat', 'lon'], how="inner", copy=True)
+        except KeyError as e:
+            if not silent:
+                print(f"Error merging table due to missing 'lat'/'lon' columns: {e}")
+            continue  # Skip merging if 'lat'/'lon' columns are missing
 
         # Display the merged DataFrame
         if not silent: print("\nMerged DataFrame:")

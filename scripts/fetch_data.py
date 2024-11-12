@@ -1,10 +1,9 @@
-# db_fetcher.py
 import json
 import pandas as pd
 from dotenv import dotenv_values
 from sqlalchemy import create_engine, text, inspect
 
-def fetch_data_from_postgres(variables = "source", silent = True):
+def fetch_data_from_postgres(variables = "source", silent = True, grid_resolution = 0.25):
     
     '''
     This function fetches a grid of coordinates of a certain year provided in 
@@ -56,7 +55,7 @@ def fetch_data_from_postgres(variables = "source", silent = True):
         if not silent: print(f'{key}:\t {value}')
     
     # Filter tables based on year and parameters
-    fetched_tables = ["elevation"]
+    fetched_tables = ["elevation", "elevation_relative"]
     for t in tables:
         parts = t.split("_")
         year = parts[-1]
@@ -84,7 +83,7 @@ def fetch_data_from_postgres(variables = "source", silent = True):
     json_outputs = {}
     for ft in fetched_tables:
         columns = inspector.get_columns(ft, schema=pg_schema)
-        column_names = [col["name"] for col in columns]
+        column_names = [col["name"] for col in columns]     
         
         if "lat" in column_names and "lon" in column_names:
             query = text(f"SELECT * FROM {pg_schema}.{ft} WHERE lat BETWEEN :lat_min AND :lat_max AND lon BETWEEN :lon_min AND :lon_max;")
@@ -93,14 +92,30 @@ def fetch_data_from_postgres(variables = "source", silent = True):
         else:
             if not silent: print(f'{ft} does not have required lat/lon or latitude/longitude columns')
             continue
+                
+        #in the sql fetch account for the grid resolution to always fetch one pixel at least
+        lat_min = variables['lat_min']-grid_resolution/2
+        lat_max = variables['lat_max']+grid_resolution/2
+        lon_min = variables['lon_min']-grid_resolution/2
+        lon_max = variables['lon_max']+grid_resolution/2     
+        
+        #check if the data is within the logical bounding boxes 
+        if lat_min < -90:
+            lat_min = -90
+        if lat_max > 90:
+            lat_max = 90
+        if lon_min < -180:
+            lon_min = -180
+        if lon_max > 180:
+            lon_max = 180
         
         df = pd.read_sql(query, con=engine, params={
-            'lat_min': variables['lat_min'],
-            'lat_max': variables['lat_max'],
-            'lon_min': variables['lon_min'],
-            'lon_max': variables['lon_max']
+            'lat_min': lat_min,
+            'lat_max': lat_max,
+            'lon_min': lon_min,
+            'lon_max': lon_max
         })
         json_outputs[ft] = df.to_json(orient='records')
-        if not silent: print(f'>>> SUCCESS: {ft} data fetched')
+        if not silent: print(f'>>> SUCCESS:\t{ft} data fetched')
         
     return json_outputs
