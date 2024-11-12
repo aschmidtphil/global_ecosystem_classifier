@@ -1,6 +1,8 @@
+
 # IMPORTS
 import json
 import pandas as pd
+import sys
 
 from fetch_data import fetch_data_from_postgres
 from merge_geo_json import merge_geo_json
@@ -9,6 +11,11 @@ from datetime import datetime
 from sqlalchemy import create_engine, text, inspect
 from dotenv import dotenv_values
 
+#default to expand training data for grid resolution if not given
+grid_resolution = 0.25
+#take argument one if given
+if len(sys.argv) > 1:
+    grid_resolution = float(sys.argv[1])
 
 #LOAD TRAINING LOCATIONS
 print("\n--- LOAD TRAINING LOCATIONS: ---")
@@ -21,6 +28,8 @@ print(f'keys: {", ".join(list(training_data.keys()))[:25]},...')
 
 # ASSIGN TRAINING DATA
 print("\n--- ASSIGN TRAINING DATA: ---")
+
+print(f"\n Training data bounding boxes are expanded according to grid resolution: {grid_resolution}")
 
 #empty dataframe for merged training data
 meta_df = pd.DataFrame()
@@ -35,12 +44,20 @@ for key in training_data.keys():
     data_key = training_data[key]
     ecosystem_key = data_key["ecosystem"]
     variables_key = data_key["variables"]
+    # Adjust lat/lon with grid resolution to ensure at least one pixel is fetched
+    lat_min = max(-90, variables_key['lat_min'] - grid_resolution / 2)
+    lat_max = min(90, variables_key['lat_max'] + grid_resolution / 2)
+    lon_min = max(-180, variables_key['lon_min'] - grid_resolution / 2)
+    lon_max = min(180, variables_key['lon_max'] + grid_resolution / 2)
+    
     #sanity checks:
     print(f'\n\t\t{key.upper()}')
     print(f'Ecosystem:\t{ecosystem_key}')
     print(f'Variables:\t{", ".join(f"{k}: {v}" for k, v in variables_key.items())}')
+    print(f'Grid expand to:\tlat_min: {lat_min}, lat_max: {lat_max}, lon_min: {lon_min}, lon_max: {lon_max}, grid resolution: {grid_resolution}')   
+    
     #fetch data
-    json_outputs = fetch_data_from_postgres(variables=variables_key, silent = True)
+    json_outputs = fetch_data_from_postgres(variables=variables_key, silent = True, grid_resolution=grid_resolution)
     # Initialize an empty list to store the temporary dataframes
     merged_data_key = merge_geo_json(json_outputs, silent=True)
     print(f'Pixels added:\t{merged_data_key.shape[0]}')
