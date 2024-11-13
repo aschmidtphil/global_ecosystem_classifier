@@ -1,0 +1,13 @@
+{
+    "world_data": {
+        "ecosystem": "ecosystem",
+        "variables": {
+            "lat_min": -90,
+            "lat_max": 90,
+            "lon_min": -180,
+            "lon_max": 180,
+            "years": [2015]
+        }
+    }    
+}
+
