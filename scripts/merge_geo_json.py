@@ -46,7 +46,7 @@ def merge_geo_json(json_outputs, silent=True):
             if rows1 != rows2: 
                 key = list(json_outputs.keys())[i]  # Ensure correct key access
                 print(f'\t\t>>>duplicate rows in {key}: dropped {rows1 - rows2} rows')
-            merged_df = merged_df.merge(df, on=['lat', 'lon'], how="inner", copy=True)
+            merged_df = merged_df.merge(df, on=['lat', 'lon'], how="outer", copy=True)
         except KeyError as e:
             if not silent:
                 print(f"Error merging table due to missing 'lat'/'lon' columns: {e}")
