@@ -1,0 +1,742 @@
+{
+    "Paris": {
+        "ecosystem": "Artificial-Urban-Buildings",
+        "variables": {
+            "lat_min": 48.815573,
+            "lat_max": 48.902145,
+            "lon_min": 2.224199,
+            "lon_max": 2.469921,
+            "years": [2020]
+        }
+    },
+    "New York": { 
+        "ecosystem": "Artificial-Urban-Buildings",
+        "variables": {
+            "lat_min": 40.5,
+            "lat_max": 41.0,
+            "lon_min": -74.25,
+            "lon_max": -73.70,
+            "years": [2020]
+        }
+    },
+    "Moscow": {
+        "ecosystem": "Artificial-Urban-Buildings",
+        "variables": {
+            "lat_min": 55.72,  
+            "lat_max": 55.83,  
+            "lon_min": 37.35,  
+            "lon_max": 37.6,   
+            "years": [2020]
+        }
+    },
+    "Lagos": {
+        "ecosystem": "Artificial-Urban-Buildings",
+        "variables": {
+            "lat_min": 6.4201,
+            "lat_max": 6.5658,
+            "lon_min": 3.3556,
+            "lon_max": 3.4545,
+            "years": [2020]
+        }
+    },
+    "Central Park (New York)": {
+        "ecosystem": "Artificial-Urban-Greenspace",
+        "variables": {
+            "lat_min": 40.7644,
+            "lat_max": 40.8000,
+            "lon_min": -73.9762,
+            "lon_max": -73.9580,
+            "years": [2020]
+        }
+    },
+    "Niedersachsen Agricultural Region (Germany)": {
+        "ecosystem": "Artificial-Agriculture-Fields",
+        "variables": {
+            "lat_min": 52.3,
+            "lat_max": 53.3,
+            "lon_min": 8.5,
+            "lon_max": 9.7,
+            "years": [2020]
+        }
+    },
+    "Shandong Agricultural Region (China)": {
+        "ecosystem": "Artificial-Agriculture-Fields",
+        "variables": {
+            "lat_min": 35.5,
+            "lat_max": 36.5,
+            "lon_min": 116.5,
+            "lon_max": 118.5,
+            "years": [2020]
+        }
+    },
+    "Wisconsin (USA)": {
+        "ecosystem": "Artificial-Agriculture-Fields",
+        "variables": {
+            "lat_min": 42.5,
+            "lat_max": 44.5,
+            "lon_min": -89.5,
+            "lon_max": -87.5,
+            "years": [2020]
+        }
+    },
+    "Alberta (Canada)": {
+        "ecosystem": "Natural-Forest-Boreal/Taiga",
+        "variables": {
+            "lat_min": 55.0,
+            "lat_max": 58.0,
+            "lon_min": -115.0,
+            "lon_max": -112.0,
+            "years": [2020]
+        }
+    },
+    "Siberia (Russia)": {
+        "ecosystem": "Natural-Forest-Boreal/Taiga",
+        "variables": {
+            "lat_min": 60.0,
+            "lat_max": 63.0,
+            "lon_min": 90.0,
+            "lon_max": 94.0,
+            "years": [2020]
+        }
+    },
+    "Lapland (Finland)": {
+        "ecosystem": "Natural-Forest-Boreal/Taiga",
+        "variables": {
+            "lat_min": 68.0,
+            "lat_max": 70.0,
+            "lon_min": 23.0,
+            "lon_max": 27.0,
+            "years": [2020]
+        }
+    },
+    "Black Forest (Germany)": {
+        "ecosystem": "Natural-Forest-Temperate",
+        "variables": {
+            "lat_min": 48.0,
+            "lat_max": 49.0,
+            "lon_min": 8.0,
+            "lon_max": 9.0,
+            "years": [2020]
+        }
+    },
+    "Vogese Mountains (France)": {
+        "ecosystem": "Natural-Forest-Temperate",
+        "variables": {
+            "lat_min": 47.5,
+            "lat_max": 48.5,
+            "lon_min": 6.5,
+            "lon_max": 7.5,
+            "years": [2020]
+        }
+    },
+    "Yellowstone (USA)": {
+        "ecosystem": "Natural-Forest-Temperate",
+        "variables": {
+            "lat_min": 44.4,
+            "lat_max": 45.0,
+            "lon_min": -110.5,
+            "lon_max": -110.0,
+            "years": [2020]
+        }
+    },
+    "Sahara Desert (Africa)": {
+        "ecosystem": "Natural-Desert-Hot",
+        "variables": {
+            "lat_min": 20.0,
+            "lat_max": 30.0,
+            "lon_min": -10.0,
+            "lon_max": 10.0,
+            "years": [2020]
+        }
+    },
+    "Kalahari Desert (Botswana)": {
+        "ecosystem": "Natural-Desert-Hot",
+        "variables": {
+            "lat_min": -24.0,
+            "lat_max": -20.0,
+            "lon_min": 19.0,
+            "lon_max": 23.0,
+            "years": [2020]
+        }
+    },
+    "Gobi Desert (Mongolia)": {
+        "ecosystem": "Natural-Desert-Cold",
+        "variables": {
+            "lat_min": 40.0,
+            "lat_max": 42.0,
+            "lon_min": 102.0,
+            "lon_max": 104.0,
+            "years": [2020]
+        }
+    },
+    "Atacama Desert (Chile)": {
+        "ecosystem": "Natural-Desert-Cold",
+        "variables": {
+            "lat_min": -24.5,
+            "lat_max": -22.5,
+            "lon_min": -68.0,
+            "lon_max": -66.0,
+            "years": [2020]
+        }
+    },
+    "Steppe (Mongolia)": {
+        "ecosystem": "Natural-Grassland-Steppe",
+        "variables": {
+            "lat_min": 42.0,
+            "lat_max": 44.0,
+            "lon_min": 105.0,
+            "lon_max": 107.0,
+            "years": [2020]
+        }
+    },
+    "Pampas_Steppe (Argentina)": {
+        "ecosystem": "Natural-Grassland-Steppe",
+        "variables": {
+            "lat_min": -35.0,
+            "lat_max": -33.0,
+            "lon_min": -59.0,
+            "lon_max": -57.0,
+            "years": [2020]
+        }
+    },
+    "Serengeti (Tanzania)": {
+        "ecosystem": "Natural-Grassland-Savannah",
+        "variables": {
+            "lat_min": -2.5,
+            "lat_max": -1.5,
+            "lon_min": 34.5,
+            "lon_max": 36.5,
+            "years": [2020]
+        }
+    },
+    "Everglades (USA)": {
+        "ecosystem": "Natural-Grassland-Swamp",
+        "variables": {
+            "lat_min": 25.5,
+            "lat_max": 26.5,
+            "lon_min": -81.0,
+            "lon_max": -80.0,
+            "years": [2020]
+        }
+    },
+    "Gorib Mountain (Mongolia)": {
+        "ecosystem": "Natural-Montane-Montane_Forest",
+        "variables": {
+            "lat_min": 41.0,
+            "lat_max": 42.0,
+            "lon_min": 104.0,
+            "lon_max": 105.0,
+            "years": [2020]
+        }
+    },
+    "Himalayas (Nepal)": {
+        "ecosystem": "Natural-Montane-Montane_Forest",
+        "variables": {
+            "lat_min": 27.0,
+            "lat_max": 28.5,
+            "lon_min": 85.5,
+            "lon_max": 87.0,
+            "years": [2020]
+        }
+    },
+    "Swiss Alps (Switzerland)": {
+        "ecosystem": "Natural-Montane-Alpine_tundra",
+        "variables": {
+            "lat_min": 46.5,
+            "lat_max": 47.5,
+            "lon_min": 7.5,
+            "lon_max": 8.5,
+            "years": [2020]
+        }
+    },
+    "Tibetan Plateau (China)": {
+        "ecosystem": "Natural-Montane-Alpine_tundra",
+        "variables": {
+            "lat_min": 32.0,
+            "lat_max": 34.0,
+            "lon_min": 91.0,
+            "lon_max": 93.0,
+            "years": [2020]
+        }
+    }, 
+    "Namib Desert (Namibia)": {
+        "ecosystem": "Natural-Desert-Hot",
+        "variables": {
+            "lat_min": -25.5,
+            "lat_max": -22.5,
+            "lon_min": 13.5,
+            "lon_max": 15.5,
+            "years": [2020]
+        }
+    },
+    "Sonoran Desert (USA, Mexico)": {
+        "ecosystem": "Natural-Desert-Hot",
+        "variables": {
+            "lat_min": 31.5,
+            "lat_max": 33.5,
+            "lon_min": -113.0,
+            "lon_max": -111.0,
+            "years": [2020]
+        }
+    },
+    "Gobi Desert (Mongolia, China)": {
+        "ecosystem": "Natural-Desert-Cold",
+        "variables": {
+            "lat_min": 40.0,
+            "lat_max": 43.0,
+            "lon_min": 106.0,
+            "lon_max": 108.0,
+            "years": [2020]
+        }
+    },
+    "Patagonian Desert (Argentina, Chile)": {
+        "ecosystem": "Natural-Desert-Cold",
+        "variables": {
+            "lat_min": -43.5,
+            "lat_max": -39.0,
+            "lon_min": -70.0,
+            "lon_max": -64.0,
+            "years": [2020]
+        }
+    },
+    "Mongolian Steppe (Mongolia)": {
+        "ecosystem": "Natural-Grassland-Steppe",
+        "variables": {
+            "lat_min": 45.0,
+            "lat_max": 47.0,
+            "lon_min": 107.0,
+            "lon_max": 109.0,
+            "years": [2020]
+        }
+    },
+    "Cerrado (Brazil)": {
+        "ecosystem": "Natural-Grassland-Steppe",
+        "variables": {
+            "lat_min": -18.0,
+            "lat_max": -13.5,
+            "lon_min": -51.0,
+            "lon_max": -45.0,
+            "years": [2020]
+        }
+    },
+    "Chihuahuan Desert (USA, Mexico)": {
+        "ecosystem": "Natural-Desert-Semi_arid",
+        "variables": {
+            "lat_min": 29.0,
+            "lat_max": 32.0,
+            "lon_min": -105.5,
+            "lon_max": -103.0,
+            "years": [2020]
+        }
+    },
+    "Karakum Desert (Turkmenistan)": {
+        "ecosystem": "Natural-Desert-Semi_arid",
+        "variables": {
+            "lat_min": 37.0,
+            "lat_max": 39.0,
+            "lon_min": 58.0,
+            "lon_max": 60.5,
+            "years": [2020]
+        }
+    },
+    "Great Plains (USA)": {
+        "ecosystem": "Natural-Grassland-Meadow",
+        "variables": {
+            "lat_min": 36.0,
+            "lat_max": 40.0,
+            "lon_min": -100.0,
+            "lon_max": -96.0,
+            "years": [2020]
+        }
+    },
+    "East European Steppe (Ukraine)": {
+        "ecosystem": "Natural-Grassland-Steppe",
+        "variables": {
+            "lat_min": 45.0,
+            "lat_max": 48.0,
+            "lon_min": 30.0,
+            "lon_max": 33.0,
+            "years": [2020]
+        }
+    },
+    "Kruger National Park (South Africa)": {
+        "ecosystem": "Natural-Grassland-Savannah",
+        "variables": {
+            "lat_min": -25.5,
+            "lat_max": -24.0,
+            "lon_min": 31.5,
+            "lon_max": 32.5,
+            "years": [2020]
+        }
+    },
+    "Chobe National Park (Botswana)": {
+        "ecosystem": "Natural-Grassland-Savannah",
+        "variables": {
+            "lat_min": -18.0,
+            "lat_max": -17.0,
+            "lon_min": 25.5,
+            "lon_max": 27.0,
+            "years": [2020]
+        }
+    },
+    "Mount Kilimanjaro (Tanzania)": {
+        "ecosystem": "Natural-Montane-Montane_Forest",
+        "variables": {
+            "lat_min": -3.0,
+            "lat_max": -2.5,
+            "lon_min": 37.3,
+            "lon_max": 37.5,
+            "years": [2020]
+        }
+    },
+    "Andes Mountains (Chile, Argentina)": {
+        "ecosystem": "Natural-Montane-Montane_Forest",
+        "variables": {
+            "lat_min": -33.0,
+            "lat_max": -30.0,
+            "lon_min": -70.0,
+            "lon_max": -67.0,
+            "years": [2020]
+        }
+    },
+    "Rockies (USA, Canada)": {
+        "ecosystem": "Natural-Montane-Montane_Forest",
+        "variables": {
+            "lat_min": 39.0,
+            "lat_max": 41.0,
+            "lon_min": -107.0,
+            "lon_max": -104.0,
+            "years": [2020]
+        }
+    },
+    "Pyrenees Mountains (Spain, France)": {
+        "ecosystem": "Natural-Montane-Subalpine",
+        "variables": {
+            "lat_min": 42.5,
+            "lat_max": 43.5,
+            "lon_min": 0.0,
+            "lon_max": 2.0,
+            "years": [2020]
+        }
+    },
+    "Mount Fuji (Japan)": {
+        "ecosystem": "Natural-Montane-Subalpine",
+        "variables": {
+            "lat_min": 35.3,
+            "lat_max": 35.5,
+            "lon_min": 138.5,
+            "lon_max": 138.8,
+            "years": [2020]
+        }
+    },
+    "Swiss Jura Mountains (Switzerland)": {
+        "ecosystem": "Natural-Montane-Subalpine",
+        "variables": {
+            "lat_min": 46.0,
+            "lat_max": 47.0,
+            "lon_min": 6.0,
+            "lon_max": 7.0,
+            "years": [2020]
+        }
+    },
+    "Tierra del Fuego (Argentina, Chile)": {
+        "ecosystem": "Natural-Montane-Alpine_tundra",
+        "variables": {
+            "lat_min": -54.5,
+            "lat_max": -53.5,
+            "lon_min": -68.5,
+            "lon_max": -67.5,
+            "years": [2020]
+        }
+    },
+    "Simpson Desert (Australia)": {
+        "ecosystem": "Natural-Desert-Hot",
+        "variables": {
+            "lat_min": -24.5,
+            "lat_max": -23.0,
+            "lon_min": 137.0,
+            "lon_max": 139.5,
+            "years": [2020]
+        }
+    },
+    "Negev Desert (Israel)": {
+        "ecosystem": "Natural-Desert-Hot",
+        "variables": {
+            "lat_min": 30.5,
+            "lat_max": 31.5,
+            "lon_min": 34.5,
+            "lon_max": 35.5,
+            "years": [2020]
+        }
+    },
+    "Taklamakan Desert (China)": {
+        "ecosystem": "Natural-Desert-Cold",
+        "variables": {
+            "lat_min": 38.0,
+            "lat_max": 40.0,
+            "lon_min": 82.0,
+            "lon_max": 84.0,
+            "years": [2020]
+        }
+    },
+    "Great Victoria Desert (Australia)": {
+        "ecosystem": "Natural-Desert-Semi_arid",
+        "variables": {
+            "lat_min": -29.0,
+            "lat_max": -27.0,
+            "lon_min": 126.0,
+            "lon_max": 128.0,
+            "years": [2020]
+        }
+    },
+    "Pampas (Argentina)": {
+        "ecosystem": "Natural-Grassland-Meadow",
+        "variables": {
+            "lat_min": -35.0,
+            "lat_max": -33.0,
+            "lon_min": -63.0,
+            "lon_max": -61.0,
+            "years": [2020]
+        }
+    },
+    "Kazakh Steppe (Kazakhstan)": {
+        "ecosystem": "Natural-Grassland-Steppe",
+        "variables": {
+            "lat_min": 50.0,
+            "lat_max": 52.0,
+            "lon_min": 65.0,
+            "lon_max": 67.0,
+            "years": [2020]
+        }
+    },
+    "Pantanal (Brazil)": {
+        "ecosystem": "Natural-Grassland-Swamp",
+        "variables": {
+            "lat_min": -17.0,
+            "lat_max": -16.0,
+            "lon_min": -57.0,
+            "lon_max": -56.0,
+            "years": [2020]
+        }
+    },
+    "Okavango Delta (Botswana)": {
+        "ecosystem": "Natural-Grassland-Swamp",
+        "variables": {
+            "lat_min": -19.5,
+            "lat_max": -18.5,
+            "lon_min": 22.0,
+            "lon_max": 23.0,
+            "years": [2020]
+        }
+    },
+    "Western Ghats (India)": {
+        "ecosystem": "Natural-Montane-Montane_Forest",
+        "variables": {
+            "lat_min": 10.0,
+            "lat_max": 11.0,
+            "lon_min": 76.0,
+            "lon_max": 77.0,
+            "years": [2020]
+        }
+    },
+    "Eastern Himalayas (India, Bhutan)": {
+        "ecosystem": "Natural-Montane-Montane_Forest",
+        "variables": {
+            "lat_min": 27.5,
+            "lat_max": 28.5,
+            "lon_min": 89.0,
+            "lon_max": 90.0,
+            "years": [2020]
+        }
+    },
+    "Appalachian Mountains (USA)": {
+        "ecosystem": "Natural-Montane-Subalpine",
+        "variables": {
+            "lat_min": 37.0,
+            "lat_max": 38.0,
+            "lon_min": -82.0,
+            "lon_max": -81.0,
+            "years": [2020]
+        }
+    },
+    "Carpathian Mountains (Romania, Ukraine)": {
+        "ecosystem": "Natural-Montane-Subalpine",
+        "variables": {
+            "lat_min": 47.0,
+            "lat_max": 48.0,
+            "lon_min": 24.0,
+            "lon_max": 25.0,
+            "years": [2020]
+        }
+    },
+    "Himalayan Foothills (Nepal)": {
+        "ecosystem": "Natural-Montane-Subalpine",
+        "variables": {
+            "lat_min": 27.0,
+            "lat_max": 28.0,
+            "lon_min": 85.0,
+            "lon_max": 86.0,
+            "years": [2020]
+        }
+    },
+    "Jotunheimen (Norway)": {
+        "ecosystem": "Natural-Montane-Alpine_tundra",
+        "variables": {
+            "lat_min": 61.5,
+            "lat_max": 62.5,
+            "lon_min": 8.0,
+            "lon_max": 9.5,
+            "years": [2020]
+        }
+    },
+    "Denali National Park (Alaska, USA)": {
+        "ecosystem": "Natural-Montane-Alpine_tundra",
+        "variables": {
+            "lat_min": 63.0,
+            "lat_max": 64.0,
+            "lon_min": -151.0,
+            "lon_max": -150.0,
+            "years": [2020]
+        }
+    },
+    "Altai Mountains (Russia, Mongolia)": {
+        "ecosystem": "Natural-Montane-Alpine_tundra",
+        "variables": {
+            "lat_min": 49.0,
+            "lat_max": 50.0,
+            "lon_min": 86.0,
+            "lon_max": 87.5,
+            "years": [2020]
+        }
+    },
+    "Antarctica": {
+        "ecosystem": "Natural-Desert-Cold",
+        "variables": {
+            "lat_min": -90.0,
+            "lat_max": -60.0,
+            "lon_min": -180.0,
+            "lon_max": 180.0,
+            "years": [2020]
+        }
+    },
+    "Undis Mountains (Pakistan)": {
+        "ecosystem": "Natural-Montane-Montane_Forest",
+        "variables": {
+            "lat_min": 34.5,
+            "lat_max": 35.5,
+            "lon_min": 71.0,
+            "lon_max": 73.0,
+            "years": [2020]
+        }
+    },
+    "Amazonas (Brazil)": {
+        "ecosystem": "Natural-Forest-Tropical",
+        "variables": {
+            "lat_min": -5.5,
+            "lat_max": -1.0,
+            "lon_min": -64.5,
+            "lon_max": -59.5,
+            "years": [2020]
+        }
+    },
+    "Urban Area (India)": {
+        "ecosystem": "Artificial-Urban-Buildings",
+        "variables": {
+            "lat_min": 28.5,
+            "lat_max": 28.8,
+            "lon_min": 77.0,
+            "lon_max": 77.3,
+            "years": [2020]
+        }
+    },
+    "Japan (Natural Forest)": {
+        "ecosystem": "Natural-Forest-Temperate",
+        "variables": {
+            "lat_min": 35.0,
+            "lat_max": 37.0,
+            "lon_min": 138.0,
+            "lon_max": 140.0,
+            "years": [2020]
+        }
+    },
+    "Arabian Desert (Arabia)": {
+        "ecosystem": "Natural-Desert-Hot",
+        "variables": {
+            "lat_min": 20.0,
+            "lat_max": 25.0,
+            "lon_min": 45.0,
+            "lon_max": 55.0,
+            "years": [2020]
+        }
+    },
+    "Kongo Rainforest (DR Congo)": {
+        "ecosystem": "Natural-Forest-Tropical",
+        "variables": {
+            "lat_min": -3.0,
+            "lat_max": 1.0,
+            "lon_min": 15.0,
+            "lon_max": 20.0,
+            "years": [2020]
+        }
+    },
+    "Equatorial Africa (Gabon's Forest)": {
+        "ecosystem": "Natural-Forest-Tropical",
+        "variables": {
+            "lat_min": -2.0,
+            "lat_max": 2.0,
+            "lon_min": 9.0,
+            "lon_max": 12.0,
+            "years": [2020]
+        }
+    },
+    "Central Spain (Meadow)": {
+        "ecosystem": "Natural-Grassland-Meadow",
+        "variables": {
+            "lat_min": 40.0,
+            "lat_max": 41.0,
+            "lon_min": -3.0,
+            "lon_max": -2.0,
+            "years": [2020]
+        }
+    },
+    "Equatorial Pacific (Galápagos Islands)": {
+        "ecosystem": "Natural-Desert-Semi_arid",
+        "variables": {
+            "lat_min": -1.5,
+            "lat_max": 0.5,
+            "lon_min": -91.0,
+            "lon_max": -89.0,
+            "years": [2020]
+        }
+    },
+    "Greenland (Southwest)": {
+        "ecosystem": "Natural-Forest-Boreal/Taiga",
+        "variables": {
+            "lat_min": 61.0,
+            "lat_max": 62.5,
+            "lon_min": -49.0,
+            "lon_max": -45.0,
+            "years": [2020]
+        }
+    },
+    "Greenland (Northeast)": {
+        "ecosystem": "Natural-Montane-Alpine_tundra",
+        "variables": {
+        "lat_min": 67.0,
+        "lat_max": 73.0,
+        "lon_min": -40.0,
+        "lon_max": -47.0,
+        "years": [2020]
+        }
+    },
+    "Cologne": {
+        "ecosystem": "Artificial-Urban-Buildings",
+        "variables": {
+        "lat_min": 50.9,
+        "lat_max": 51.0,
+        "lon_min": 6.85,
+        "lon_max": 7.05,
+        "years": [2020]
+        }
+    }
+}
