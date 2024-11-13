@@ -19,7 +19,7 @@ if len(sys.argv) > 1:
 
 #LOAD TRAINING LOCATIONS
 print("\n--- LOAD TRAINING LOCATIONS: ---")
-with open("../data/ecosystem_world_data.json", "r") as json_file:
+with open("../scripts/ecosystem_world_data.json", "r") as json_file:
             training_data = json.load(json_file)
             
 # confirm training data
