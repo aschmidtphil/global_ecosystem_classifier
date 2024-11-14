@@ -1,0 +1,16 @@
+{
+    "Montane-Alpine_tundra": "#A9CCE3",  
+    "Grassland-Steppe": "#F4D03F",       
+    "Grassland-Meadow": "#82E0AA",       
+    "Agriculture-Fields": "tan",     
+    "Forest-Temperate": "#229954",       
+    "Desert-Cold": "#D5DBDB",       
+    "Montane-Subalpine": "#85C1E9",     
+    "Forest-Boreal/Taiga": "#1E8449",   
+    "Montane-Montane_Forest": "darkgreen",
+    "Desert-Hot": "#F5B041",            
+    "Grassland-Savannah": "#F39C12",
+    "Grassland-Swamp": "#A3E4D7",       
+    "Forest-Tropical": "#145A32",       
+    "Urban-Buildings": "red"        
+}
