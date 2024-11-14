@@ -1,0 +1,58 @@
+{
+    "Central Africa": {
+        "variables": {
+            "lat_min": -11,
+            "lat_max": 23,
+            "lon_min": 10,
+            "lon_max": 35
+        }
+    },
+    "Europe": {
+        "variables": {
+            "lat_min": 35,
+            "lat_max": 71,
+            "lon_min": -25,
+            "lon_max": 45
+        }
+    },
+    "China": {
+        "variables": {
+            "lat_min": 18,
+            "lat_max": 54,
+            "lon_min": 73,
+            "lon_max": 135
+        }
+    },
+    "South America": {
+        "variables": {
+            "lat_min": -56,
+            "lat_max": 13,
+            "lon_min": -81,
+            "lon_max": -34
+        }
+    },
+    "Australia": {
+        "variables": {
+            "lat_min": -44,
+            "lat_max": -10,
+            "lon_min": 113,
+            "lon_max": 154
+        }
+    },
+    "World": {
+        "variables": {
+            "lat_min": -90,
+            "lat_max": 90,
+            "lon_min": -180,
+            "lon_max": 180
+        }
+    },
+    "Uluru": {
+        "variables": {
+            "lat_min": -26,
+            "lat_max": -24,
+            "lon_min": 129,
+            "lon_max": 133
+        }
+    }
+}
