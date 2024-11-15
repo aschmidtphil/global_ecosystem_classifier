@@ -17,14 +17,14 @@ from fetch_map_df import fetch_map_df  # Function to fetch data with bounding bo
 from basemap_imshow_discrete_or_heatmap import basemap_imshow_discrete_or_heatmap  # Custom mapping function
 
 # ARGUMENTPARSER SETUP
-parser = argparse.ArgumentParser(description="Run a script with customizable parameters.")
-parser.add_argument('--plotting_parameters', nargs='+', default=["predicted_ecosystem"], help="List of parameters to plot.")
-parser.add_argument('--level', type=int, default=3, help="Level of ecosystem detail.")
-parser.add_argument('--year', type=int, default=2020, help="Year to fetch data for.")
-parser.add_argument('--region', type=str, default="South America", help="Geographic region for the data.")
+parser = argparse.ArgumentParser(description="Plot a map with customizable parameters")
+parser.add_argument('--plotting_parameters', nargs='+', default=["predicted_ecosystem"], help="List of parameters to plot. Default: 'predicted_ecoystem'")
+parser.add_argument('--level', type=int, default=3, help="Level of ecosystem detail. Only relevant for plotting_parameters==predicted_ecosystem")
+parser.add_argument('--year', type=int, default=2020, help="Year to fetch data for. Default: '2020'")
+parser.add_argument('--region', type=str, default="World", help="Geographic region for the data. Sourced from 'bounding_boxes.json'. Default: 'World'")
 parser.add_argument('--silent', action='store_true', help="Suppress print statements.")
-parser.add_argument('--color', type=str, default="default", help="Color scheme for the plot.")
-parser.add_argument('--scale', type=str, choices=["linear", "log"], default="linear", help="Scale for the color mapping (linear or log).")
+parser.add_argument('--color', type=str, default="default", help="Color scheme for the plot.\nFor discrete data 'custom' will source values from custom_colors.json.\nFor continous data any heatmap-string can be used")
+parser.add_argument('--scale', type=str, choices=["linear", "log"], default="linear", help=" For conitnous data: Scale for the color mapping (linear or log).")
 
 args = parser.parse_args()
 
