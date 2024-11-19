@@ -54,5 +54,21 @@
             "lon_min": 129,
             "lon_max": 133
         }
+    },
+    "LaPaz": {
+        "variables": {
+            "lat_min": -18.5,
+            "lat_max": -14.5,
+            "lon_min": -70.15,
+            "lon_max": -66.15
+        }
+    },
+    "African wall": {
+        "variables": {
+            "lat_min": -5,
+            "lat_max": 40,
+            "lon_min": -20,
+            "lon_max": 60
+        }
     }
 }
