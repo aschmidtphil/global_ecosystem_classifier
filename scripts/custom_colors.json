@@ -12,5 +12,6 @@
     "Grassland-Savannah": "#F39C12",
     "Grassland-Swamp": "#A3E4D7",       
     "Forest-Tropical": "#145A32",       
-    "Urban-Buildings": "red"        
+    "Urban-Buildings": "red",
+    "Desert-Semi_arid":  "#D4A90F"    
 }
