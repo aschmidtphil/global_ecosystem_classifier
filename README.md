@@ -1,5 +1,3 @@
-This repository was created as part of the Capstone Project of the *Data Analytics Consulting Bootcamp 2024-2*. Original repository: [https://github.com/NoahKuertoes/global_ecosystem_classifier].
-
 # __INTRODUCTION__
 
 With the climate rapidly changing and humans having increasing impact on global ecosystems, today it is not longer sufficient to classify and analyse ecosystems based on their geographical location and historical data. Here, we classify ecosystems based on their wider geoecological parameters. The goal is to create a classifier that allows us to dynamically classify ecosystems. Perspectively, used to predict i.e. expected species richness, species extinction rates, soil status, soil detioration and eventually ecosystem collapse. <br>
@@ -172,3 +170,5 @@ if len(X) > 1:
 ### 4.1 Classification of forecast for 2100
 
 ![image](https://github.com/user-attachments/assets/4613cb37-1e20-4aad-bb41-f755159b70fd)
+
+This repository was created as part of the Capstone Project of the *Data Analytics Consulting Bootcamp 2024-2*. Original repository: [https://github.com/NoahKuertoes/global_ecosystem_classifier].
